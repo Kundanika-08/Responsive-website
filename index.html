@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        .book-card img {
+            width: 100%;
+            height: auto;
+        }
+        .section {
+            display: none;
+        }
+        .active-section {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Home Page -->
+    <div id="homePage" class="active-section container mt-5">
+        <h1 class="mb-4">Popular Book</h1>
+        <div class="row">
+            <!-- Wings of Fire -->
+            <div class="col-md-4 mb-4">
+                <div class="card book-card">
+                    <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/book-apj-img.png" class="card-img-top" alt="Wings of Fire">
+                    <div class="card-body">
+                        <h5 class="card-title">Wings of Fire</h5>
+                        <p class="card-text">An Autobiography of Abdul Kalam<br><small class="text-muted">by Arun Tiwari</small></p>
+                        <button class="btn btn-primary" onclick="showSection('wings')">Read Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The 3 Mistakes of My Life -->
+            <div class="col-md-4 mb-4">
+                <div class="card book-card">
+                    <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/book-chetan-bhagat-img.png" class="card-img-top" alt="3 Mistakes">
+                    <div class="card-body">
+                        <h5 class="card-title">The 3 Mistakes of My Life</h5>
+                        <p class="card-text">Indian author<br><small class="text-muted">by Chetan Bhagat</small></p>
+                        <button class="btn btn-primary" onclick="showSection('mistakes')">Read Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Harry Potter -->
+            <div class="col-md-4 mb-4">
+                <div class="card book-card">
+                    <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/harrypotter-img.png" class="card-img-top" alt="Harry Potter">
+                    <div class="card-body">
+                        <h5 class="card-title">Harry Potter</h5>
+                        <p class="card-text">and the Sorcerer's Stone<br><small class="text-muted">by J.K. Rowling</small></p>
+                        <button class="btn btn-primary" onclick="showSection('harry')">Read Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wings of Fire Details -->
+    <div id="wings" class="section container mt-5">
+        <div class="card">
+            <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/book-apj-img.png" class="card-img-top" alt="Wings of Fire">
+            <div class="card-body">
+                <h3 class="card-title">Wings of Fire</h3>
+                <p class="text-muted">by Arun Tiwari</p>
+                <p>Every common man who by his sheer grit and hard work achieves success should share his story... The 'Wings of Fire' is one such autobiography by visionary scientist Dr. A.P.J. Abdul Kalam...</p>
+                <button class="btn btn-warning" onclick="showSection('homePage')">Back</button>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3 Mistakes Details -->
+    <div id="mistakes" class="section container mt-5">
+        <div class="card">
+            <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/book-chetan-bhagat-img.png" class="card-img-top" alt="3 Mistakes">
+            <div class="card-body">
+                <h3 class="card-title">The 3 Mistakes of My Life</h3>
+                <p class="text-muted">by Chetan Bhagat</p>
+                <p>The 3 Mistakes of My Life is the third novel by eminent Indian author Chetan Bhagat... Based on cricket, business, and religion, the novel revolves around three young men in Ahmedabad.</p>
+                <button class="btn btn-warning" onclick="showSection('homePage')">Back</button>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Harry Potter Details -->
+    <div id="harry" class="section container mt-5">
+        <div class="card">
+            <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/harrypotter-img.png" class="card-img-top" alt="Harry Potter">
+            <div class="card-body">
+                <h3 class="card-title">Harry Potter</h3>
+                <p class="text-muted">by J.K. Rowling</p>
+                <p>Harry Potter's life is miserable... until he receives a letter revealing he's a wizard. He's rescued from his relatives and taken to Hogwarts, where he finally feels like he belongs.</p>
+                <button class="btn btn-warning" onclick="showSection('homePage')">Back</button>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS, jQuery, and Popper -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Display Logic -->
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('.section, #homePage');
+            sections.forEach(section => {
+                section.classList.remove('active-section');
+            });
+            document.getElementById(id).classList.add('active-section');
+        }
+    </script>
+</body>
+
+</html>
